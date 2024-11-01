@@ -3,9 +3,9 @@ let boxes = document.querySelectorAll(".box");
 let turn = "X";
 let isGameOver = false;
 
-// Initial event listeners setup
-boxes.forEach(box => {
-    box.innerHTML = "";
+// Initial setup to clear boxes
+boxes.forEach((box, index) => {
+    box.innerHTML = ""; // Clear the initial numbers
     box.addEventListener("click", () => {
         // Only allow move if game is not over and box is empty
         if (!isGameOver && box.innerHTML === "") {
@@ -83,8 +83,8 @@ function resetGame() {
     document.querySelector("#play-again").style.display = "none";
     
     boxes.forEach(box => {
-        box.innerHTML = "";
-        box.style.backgroundColor = ""; // More standard way to reset background
-        box.style.color = "#fff";
+        box.innerHTML = ""; // Clear the boxes
+        box.style.backgroundColor = ""; // Reset background
+        box.style.color = "#fff"; // Reset text color
     });
 }
